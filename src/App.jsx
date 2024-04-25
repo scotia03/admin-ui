@@ -1,5 +1,5 @@
-import { useState } from "react";
-import Home from "./pages/home/Home";
+import { useState } from "react"; 
+import Home from "./pages/home2/Home";
 import Login from "./pages/login/Login";
 import List from "./pages/list/List";
 import Single from "./pages/single/Single";

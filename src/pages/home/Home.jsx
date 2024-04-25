@@ -1,7 +1,7 @@
 import Sidebar from "../../components/sidebar/Sidebar";
 import Navbar from "../../components/navbar/Navbar";
 import Widget from "../../components/widget/Widget";
-import chart from "../../components/chart/Chart";
+import Chart from "../../components/chart/Chart";
 import "./home.scss";
 
 const Home = () => {
@@ -17,8 +17,8 @@ const Home = () => {
           <Widget type="balance" />
         </div>
         <div className="charts">
-          <chart type="order" aspect={2/1} />
-          <chart type="earning"aspect={2/1} />
+          <Chart type="order" aspect={2/1} />
+          <Chart type="earning"aspect={2/1} />
         </div>
       </div>
     </div>
