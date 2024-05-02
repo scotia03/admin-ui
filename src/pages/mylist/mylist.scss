@@ -1,8 +1,18 @@
-.list {
+.mylist {
     display: flex;
-    width: 100%;
   
-    .listContainer {
+    .mylistContainer {
       flex: 6;
+  
+      .widgets,
+      .charts {
+        display: flex;
+        padding: 20px;
+        gap: 20px;
+      }
+  
+          .charts {
+        padding: 5px 20px;
+      }
     }
   }

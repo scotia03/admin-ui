@@ -1,12 +1,14 @@
-import { useState } from "react"; 
-import Home from "./pages/home2/Home";
+import { useState } from "react";
+import Home from "./pages/home/Home";
 import Login from "./pages/login/Login";
 import List from "./pages/list/List";
 import Single from "./pages/single/Single";
 import New from "./pages/new/New";
+import Mydatatable from "./components/mydatatable/Mydatatable";
 import Mylist from "./pages/mylist/Mylist";
+import Widget from "./components/widget/Widget";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { productInputs,userInputs } from "./Formsource";
+import { productInputs, userInputs } from "./Formsource"
 
 function App() {
   return (
@@ -21,17 +23,19 @@ function App() {
               <Route path=":userId" element={<Single />}></Route>
               <Route 
                 path="new" 
-                element={<New inputs={userInputs} title="Add New User" />}
-              >
-            </Route>
-            <Route path="products">
-                <Route index element={<list />}></Route>
-                <Route path=":productId" element={<Single />}></Route>
-                <Route 
-                  path="new"
-                  element={<new inputs={productInputs} title="Add New Product" />}
+                element={<New inputs={userInputs} title="Add New User"/>}
                 />
             </Route>
+            <Route path="products">
+              <Route index element={<List />}></Route>
+              <Route path=":productsId" element={<Single />}></Route>
+              <Route
+                path="new" 
+                element={<New inputs={productInputs} title="Add New Products"/>}
+                />
+            </Route>
+            <Route path="categories">
+              <Route index element={<Mylist />}></Route>
             </Route>
           </Route>
         </Routes>
@@ -39,6 +43,5 @@ function App() {
     </>
   );
 }
-
 
 export default App;
