@@ -16,8 +16,9 @@ const MyList = () => {
           <Widget type="order"/>
           <Widget type="earning"/>
         </div>
-        <Mydatatable />
-        
+        <div className="table">
+          <Mydatatable title="all data"/>
+        </div>
       </div>
     </div>
   );

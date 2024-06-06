@@ -30,12 +30,10 @@ const actionColumn = [
   },
 ];
 
-const Mydatatable = () => {
+const Mydatatable = ({title}) => {
   return (
     <div className="mydatatable">
-      <div className="mydatatableTitle">
-      All Data
-      </div>
+      <div className="myDatatableTitle">{title}</div>
       <DataGrid
         rows={rows}
         columns={columns.concat(actionColumn)}
