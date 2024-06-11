@@ -13,20 +13,20 @@ import { DarkModeContext } from "./context/darkModeContext";
 import { AuthContext } from "./context/AuthContext";
 
 function App() {
-  const {darMode} =useContext(DarkModeContext);
+  const {darkMode} = useContext(DarkModeContext);
 
   const { currentUser } = useContext(AuthContext)
 
-  const RequireAuth = ({ children }) =>{
-    return currentUser ? children : <Navigate to="/login/" />;
+  const RequireAuth = ({ children }) => {
+    return currentUser ? children : <Navigate to="/login" />;
   };
 
-  const NotRequireAuth = ({ children }) =>{
-    return currentUser ? <Navigate to="/login/" /> : children;
+  const NotRequireAuth = ({ children }) => {
+    return currentUser ? <Navigate to="/" /> : children;
   };
 
   return (
-    <div className={darMode ? "app dark" : "app"}>
+    <div className={darkMode ? "app dark" : "app"}>
       <BrowserRouter>
         <Routes>
           <Route path="/">
