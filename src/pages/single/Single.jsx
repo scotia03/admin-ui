@@ -2,10 +2,13 @@ import "./single.scss";
 import Sidebar from "../../components/sidebar/Sidebar";
 import Navbar from "../../components/navbar/Navbar";
 import Chart from "../../components/chart/Chart";
-import List from "../../components/datatable2/Datatable";
+import Datatable from "../../components/datatable2/Datatable";
+import { useLocation } from "react-router-dom";
 
+const Single = ({columns}) => { 
+    const location = useLocation();
+    const id = location.pathname.split('/')[2];
 
-const Single = () => { 
   return (
     <div className="single">
       <Sidebar />
@@ -22,6 +25,10 @@ const Single = () => {
                     />
                     <div className="details">
                         <h1 className="itemTitle">Jane doe</h1>
+                        <div className="detailItem">
+                            <span className="itemKey">ID</span>
+                            <span className="itemValue">{id}</span>
+                        </div>
                         <div className="detailItem">
                             <span className="itemKey">Emai</span>
                             <span className="itemValue">janedong@gmail.com</span>
@@ -49,7 +56,7 @@ const Single = () => {
         </div>
         <div className="bottom">
             <h1 className="title">last transaction</h1>
-            <List />
+            <Datatable columns={columns} />
         </div>
         single
         
