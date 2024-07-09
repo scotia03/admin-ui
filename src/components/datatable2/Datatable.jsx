@@ -71,7 +71,7 @@ const Datatable = ({columns}) => {
       <div className="datatable">
         <div className="datatableTitle">
           {type.toUpperCase()}
-          <Link to="/users/new" className="link">
+          <Link to={"/" + type + "/new"} className="link">
             Add New
           </Link>
         </div>
