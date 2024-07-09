@@ -6,14 +6,14 @@ import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import MonetizationOnOutlinedIcon from "@mui/icons-material/MonetizationOnOutlined";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import { useEffect, useState } from "react";
-import { collection, query, where, getDoc } from "firebase/firestore";
+import { collection, query, where, getDocs } from "firebase/firestore";
 import { db } from "../../firebase";
 
 const Widget = ({ type }) => {
   let data;
 
   //temporary
-  const [ amount, setAmout ] = useState(null);
+  const [ amount, setAmount ] = useState(null);
   const [ diff, setDiff ] = useState(null);
 
   switch (type) {
@@ -22,7 +22,7 @@ const Widget = ({ type }) => {
         title: "USERS",
         isMoney: false,
         link: "See all users",
-        query:"user",
+        query:"users",
         icon: (
           <PersonOutlinedIcon
             className="icon"
